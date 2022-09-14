@@ -1,6 +1,5 @@
 
-export const createSimpleServer = async (express, middlewares, routes) => {
-    console.log(express)
+export const createSimpleServer = async (express, routes) => {
     const app = express()
     
     // Setup routes

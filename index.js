@@ -8,12 +8,13 @@ import {useSimpleRoutes} from "./routes.js";
 
 await createSimpleServer(
     express,
-    [
-        cors
-    ],
     useSimpleRoutes()
 ).then(app => {
     const PORT = process.env.PORT ?? 8090
+    
+    // Middleware
+    app.use(cors())
+    
     app.listen(PORT, () => {
         console.log(`Simply listening on http://localhost:${PORT}`)
     })
