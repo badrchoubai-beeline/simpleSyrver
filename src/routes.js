@@ -1,33 +1,25 @@
-export const useSimpleRoutes = (apiPath='') => ({
+export const useSimpleRoutes = (apiPath = '') => ({
   [`/${apiPath}`]: {
     get: (request, response) => {
-      response
-          .send({
-            "message": "Simple GET request/response mock",
-          })
-          .status(200)
+      response.status(200).send({
+        message: 'Simple GET request/response mock'
+      })
     },
     put: (request, response) => {
-      response
-          .send({
-            "message": "Simple PUT request/response mock",
-          })
-          .status(201)
+      response.status(201).send({
+        message: 'Simple PUT request/response mock'
+      })
     },
     post: (request, response) => {
-      response
-          .send({
-            "message": "Simple POST request/response mock",
-          })
-          .status(201)
+      response.status(201).send({
+        message: 'Simple POST request/response mock'
+      })
     },
     delete: (request, response) => {
-      response
-          .send({
-            "message": "Simple DELETE request/response mock",
-          })
-          .status(204)
-    },
+      response.status(204).send({
+        message: 'Simple DELETE request/response mock'
+      })
+    }
   },
   '/health': {
     get: (request, response) => {
